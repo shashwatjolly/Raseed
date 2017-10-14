@@ -22,7 +22,7 @@ export class Profile extends Component<{}> {
 
   render() {
     return (
-      <View>
+      <View style={{backgroundColor:'#633ea5',height:window.height}}>
         <Text>Profile</Text>
       </View>
     );
