@@ -22,7 +22,7 @@ export class SwitchHome extends Component<{}> {
   render() {
     return (
       <View style={{backgroundColor:'#633ea5',height:window.height,alignItems:'center'}}>
-        <View style={{top:60,alignItems:'center',flexDirection:'row',backgroundColor:'#4c2e82',borderRadius:4}}>
+        <View style={{top:50,alignItems:'center',flexDirection:'row',backgroundColor:'#4c2e82',borderRadius:4}}>
             <TouchableOpacity style={{padding:20}} onPress={() => this.props.navigation.navigate('Pay')}>
               <Image source={require('../../assets/images/22500722_1608921872492156_281082674_n.png')} onPress={() => this.props.navigation.navigate('Pay')} style={{height:50,width:50}}/>
               <Text style={{color:'white',paddingLeft:6}} >Pay</Text>
