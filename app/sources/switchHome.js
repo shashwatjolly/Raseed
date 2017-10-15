@@ -10,9 +10,19 @@ import {
 
 import {SubModalStack} from '../config/routes';
 
+import {NewTransaction,ConfirmTransaction} from '../actions/api';
+
 const window = Dimensions.get('window');
 
 export class SwitchHome extends Component<{}> {
+
+  componentDiDMount(){
+
+  }
+
+  fetchPendingPayment(){
+
+  }
 
   static navigationOptions = {
     title: 'SwitchHome',
@@ -39,7 +49,7 @@ export class SwitchHome extends Component<{}> {
 
         <Image source={require('../../assets/images/rbl-zeta-rupay.17589d71.png')}  style={{top:80,height:180,width:300}}/>
 
-        <View style={{backgroundColor:'#17e209',top:180,padding:6,width:window.width-60}}>
+        <View style={{backgroundColor:'#17e209',top:180,padding:6,width:window.width-60,borderRadius:4}}>
               <Text style={{color:'#333'}}>CASHCARD PLUS</Text>
         </View>
 

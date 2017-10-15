@@ -18,11 +18,11 @@ export function RequestTransaction(mobile,amount){
 		})
 }
 
-export function NewTransaction(userId){
-	const baseUrl = "52.187.64.222:3000/transaction/fetch?mobile=8750507753";
+export function NewTransaction(mobile){
+	const baseUrl = "52.187.64.222:3000/transaction/fetch?mobile="+mobile;
 	var reqObj = {};
 	var responseObj = {"success":false};
-	let url = 'http://52.187.64.222:3000/transaction/fetch?mobile=8750507753';
+	let url = 'http://52.187.64.222:3000/transaction/fetch?mobile='+mobile;
 	return fetch(url)
 		.then((resp) => resp.json())
 		.then(function (data) {

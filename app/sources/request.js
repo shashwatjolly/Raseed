@@ -4,7 +4,9 @@ import {
   View,
   TouchableOpacity,
   Dimensions,
-  TextInput
+  TextInput,
+  AsyncStorage,
+  Alert
 } from 'react-native';
 
 import {RequestTransaction,TransactionStatus} from '../actions/api.js';
@@ -16,6 +18,7 @@ export class Request extends Component<{}> {
     super(props);
     this.state={
           mobile : '',
+          userMobile : '',
           amount : '',
           requested : false,
           token : '',
@@ -23,12 +26,34 @@ export class Request extends Component<{}> {
     }
     this.requestPaymentInitiate = this.requestPaymentInitiate.bind(this);
     this.paymentDoneUpdate = this.paymentDoneUpdate.bind(this);
+    this.setUserMobile = this.setUserMobile.bind(this);
     this.refreshIntervalId = '';
+  }
+
+  componentWillMount(){
+    this.getUserMobile();
+  }
+
+  async getUserMobile(){
+    const value = await AsyncStorage.getItem('userMobile').then(userMobile => this.setUserMobile(userMobile)).catch();
+  }
+
+  setUserMobile(userMobile){
+    this.setState({
+      userMobile : userMobile,
+    });
   }
 
   requestPaymentInitiateApiCall(){
     console.log(this.state.mobile);
-    let temp = RequestTransaction(this.state.mobile,this.state.amount).then(responseObj => this.requestPaymentInitiate(responseObj)).catch();
+    if(this.state.mobile != this.state.userMobile){
+      let temp = RequestTransaction(this.state.mobile,this.state.amount).then(responseObj => this.requestPaymentInitiate(responseObj)).catch();
+    }else{
+      Alert.alert(
+                  'Oops...',
+                  'It seems you are asking yourself for payment',
+                )
+    }
   }
 
   requestPaymentInitiate(responseObj){
