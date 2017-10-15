@@ -4,7 +4,9 @@ import {
   View,
   TouchableOpacity,
   Dimensions,
-  TextInput
+  TextInput,
+  WebView,
+  ScrollView
 } from 'react-native';
 
 const window = Dimensions.get('window');
@@ -18,7 +20,8 @@ export class Profile extends Component<{}> {
   render() {
     return (
       <View style={{backgroundColor:'#633ea5',height:window.height}}>
-        <Text>Receipt</Text>
+        <Text>Profile</Text>
+        
       </View>
     );
   }

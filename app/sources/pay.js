@@ -6,10 +6,12 @@ import {
   Dimensions,
   TextInput,
   Image,
-  AsyncStorage
+  AsyncStorage,
+  ScrollView,
+  WebView
 } from 'react-native';
 
-import {NewTransaction,ConfirmTransaction} from '../actions/api';
+import {NewTransaction,ConfirmTransaction,GetPayURL} from '../actions/api';
 
 const window = Dimensions.get('window');
 
@@ -68,6 +70,8 @@ export class Pay extends Component<{}> {
   updateNewTrans(responseObj){
     console.log(responseObj);
     if(responseObj.success){
+      
+
       this.setState({
         pendingPayment : true,
         paid : false,
@@ -77,6 +81,8 @@ export class Pay extends Component<{}> {
       });
     }
   }
+
+
 
   completePayment(){
     let temp = ConfirmTransaction(this.state.token).then(responseObj => this.generateReceipt(responseObj)).catch();
@@ -116,15 +122,15 @@ export class Pay extends Component<{}> {
 
       {this.state.pendingPayment && !this.state.paid &&
 
-          <View style={{alignItems:'center'}}>
-            <Text style={{color:'white',fontSize:16,paddingTop:100}}>{this.state.merchantName} is requesting payment</Text>
-
-            <TouchableOpacity style={{margin:40,padding:10,backgroundColor:'#17e209',alignItems:'center',width:window.width-120,borderRadius:6}} onPress={() => this.completePayment()}>
-
-                <Text style={{fontSize:18}}>ACCEPT</Text>
-
-            </TouchableOpacity>
-          </View>
+          
+            <ScrollView style={{marginTop:5}}>
+          <WebView
+          style={{margin:10,borderRadius:4,height:500}}
+          source={ {
+            uri: "https://test.instamojo.com/@pravandan_chand/8091c1f4c2254105ba99d8a49f59f0be"
+          } } />
+        </ScrollView>
+          
 
       }
 

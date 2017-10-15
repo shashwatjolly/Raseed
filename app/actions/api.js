@@ -72,3 +72,23 @@ export function TransactionStatus(token){
 			console.log(error)
 		})
 }
+
+export function GetPayURL(amount) {
+	const baseUrl = "http://52.187.64.222:3000/transaction/generatePayURL?amount="+amount;
+	console.log('called');
+	var reqObj = {};
+	var responseObj = {"success":false};
+	let url = 'http://52.187.64.222:3000/transaction/generatePayURL?amount='+amount;
+	return fetch(url)
+		.then((resp) => resp.json())
+		.then(function (data) {
+			responseObj.success = true;
+			console.log(data);
+			
+			return data;
+		})
+		.catch(function (error) {
+			responseObj.success = false;
+			console.log(error)
+		})
+}	
