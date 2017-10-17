@@ -117,7 +117,7 @@ export class Pay extends Component<{}> {
 
   render() {
     return (
-      <View style={{backgroundColor:'#633ea5',height:window.height}}>
+      <View style={{backgroundColor:'#21232F',height:window.height}}>
 
       
         {!(this.state.pendingPayment && !this.state.paid ) &&
@@ -152,8 +152,8 @@ export class Pay extends Component<{}> {
 
             <Text style={{color:'#333',paddingTop:15,fontSize:26,color:'white'}}>Rs {this.state.amount}</Text>
 
-            <TouchableOpacity style={{marginTop:40,flex:1,backgroundColor:'#1EB774',paddingTop:10,paddingBottom:50,width:window.width-40,alignItems:'center',borderRadius:4}} onPress={() => this._acceptedPay()}>
-                <Text style={{color:'white',paddingTop:0,fontSize:28}} >ACCEPT</Text>
+            <TouchableOpacity style={{marginTop:40,flex:1,backgroundColor:'#1EB774',paddingTop:10,paddingBottom:40,width:window.width-100,alignItems:'center',borderRadius:40}} onPress={() => this._acceptedPay()}>
+                <Text style={{color:'white',paddingTop:0,fontSize:20}} >ACCEPT</Text>
             </TouchableOpacity>
             
 
@@ -203,7 +203,7 @@ export class Pay extends Component<{}> {
 
             <Text style={{color:'#333',paddingTop:25,fontSize:18,paddingBottom:20}}>Paid Using Debit Card</Text>
 
-            <View style={{flex:1,backgroundColor:'#E94C3D',paddingTop:10,paddingBottom:50,width:window.width-40,alignItems:'center',borderRadius:4}}>
+            <View style={{flex:1,backgroundColor:'#F65224',paddingTop:10,paddingBottom:50,width:window.width-40,alignItems:'center',borderRadius:4}}>
                 <Text style={{color:'white',paddingTop:0,fontSize:28}}>Rs. {this.state.amount}</Text>
             </View>
           

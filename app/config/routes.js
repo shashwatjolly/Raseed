@@ -76,8 +76,12 @@ export const Tabs = TabNavigator({
   tabBarPosition: 'bottom',
   tabBarOptions: {
     activeTintColor: 'white',
+    labelStyle: {
+      fontFamily: 'Montserrat-Regular',
+  },
      style: {
-    backgroundColor: '#633ea5',
+    backgroundColor: '#21232F',
+    fontFamily: 'Montserrat-Regular'
   },
   },
 }

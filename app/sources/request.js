@@ -101,7 +101,7 @@ export class Request extends Component<{}> {
 
   render() {
     return (
-      <View style={{backgroundColor:'#633ea5',height:window.height,alignItems:'center'}}>
+      <View style={{backgroundColor:'#21232F',height:window.height,alignItems:'center'}}>
         <Text style={{color:'white',paddingTop:10,fontSize:24}}>REQUEST</Text>
 
       {!this.state.requested &&
@@ -111,7 +111,7 @@ export class Request extends Component<{}> {
               underlineColorAndroid='transparent'
               placeholderTextColor='white'
               tintColor={'#633ea5'}
-              style={{height: 50,fontSize:20 ,borderColor: 'white', borderWidth: 1,width:window.width-100,borderRadius:4,top:160,fontFamily: 'Montserrat-Regular',color:'white',textAlign:'center'}}
+              style={{height: 50,fontSize:20 ,borderColor: 'white', borderWidth: 1,width:window.width-120,borderRadius:40,top:100,fontFamily: 'Montserrat-Regular',color:'white',textAlign:'center'}}
               onChangeText={(mobile) => this.setState({mobile})}
               value={this.state.mobile}
               placeholder={'Mobile Number'}
@@ -123,7 +123,7 @@ export class Request extends Component<{}> {
               underlineColorAndroid='transparent'
               placeholderTextColor='white'
               tintColor={'#633ea5'}
-              style={{margin:30,height: 50,fontSize:20 ,borderColor: 'white', borderWidth: 1,width:window.width-100,borderRadius:4,top:160,fontFamily: 'Montserrat-Regular',color:'white',textAlign:'center'}}
+              style={{margin:30,height: 50,fontSize:20 ,borderColor: 'white', borderWidth: 1,width:window.width-120,borderRadius:40,top:100,fontFamily: 'Montserrat-Regular',color:'white',textAlign:'center'}}
               onChangeText={(amount) => this.setState({amount})}
               value={this.state.amount}
               placeholder={'Amount'}
@@ -131,9 +131,9 @@ export class Request extends Component<{}> {
               autoFocus={true}
             />
             
-            <TouchableOpacity style={{margin:40,padding:10,backgroundColor:'#17e209',alignItems:'center',width:window.width-120,borderRadius:6,top:140}} onPress={() => this.requestPaymentInitiateApiCall()}>
+            <TouchableOpacity style={{margin:0,padding:10,backgroundColor:'#F65224',alignItems:'center',width:window.width-120,borderRadius:40,top:140}} onPress={() => this.requestPaymentInitiateApiCall()}>
 
-                  <Text style={{fontSize:18}}>REQUEST</Text>
+                  <Text style={{fontSize:18,color:'white'}}>REQUEST</Text>
 
             </TouchableOpacity>
 

@@ -19,7 +19,7 @@ static navigationOptions = {
 
   render() {
     return (
-      <View style={{backgroundColor:'#633ea5',height:window.height}}>
+      <View style={{backgroundColor:'#21232F',height:window.height}}>
         <View style={{alignItems:'center',paddingTop:10}}>
           <Text style={{fontSize:20,color:'white'}}>RECEIPT</Text>
         </View>

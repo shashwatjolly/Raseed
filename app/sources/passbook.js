@@ -64,10 +64,11 @@ export class Passbook extends Component<{}> {
 
     for(var i=0;i<tempResponseObj;i++){
       let parAmount = responseObj.creditObjects[i].amount;
+      let parMerchantName = responseObj.creditObjects[i].merchantName;
       this.state.allTrans.push(
-           <TouchableOpacity style={{margin:10,backgroundColor:'#4c2e82',borderRadius:4}} onPress={() => this.props.navigation.navigate('Receipt')}>
-            <Text style={{color:'white',fontSize:18,paddingLeft:20,paddingTop:10,paddingBottom:0}}>Big Bazaar</Text>
-            <Text style={{position:'absolute',color:'#fc004f',fontSize:18,paddingLeft:240,paddingTop:10,paddingBottom:10,fontWeight:'bold'}}>DEBIT</Text>
+           <TouchableOpacity style={{margin:10,backgroundColor:'#F65224',borderRadius:40}} onPress={() => this.props.navigation.navigate('Receipt')}>
+            <Text style={{color:'white',fontSize:16,paddingLeft:20,paddingTop:10,paddingBottom:0}}>{parMerchantName}</Text>
+            <Text style={{position:'absolute',color:'white',fontSize:18,paddingLeft:240,paddingTop:10,paddingBottom:10,fontWeight:'bold'}}>DEBIT (-)</Text>
             <Text style={{color:'white',fontSize:12,paddingLeft:20,paddingTop:10,paddingBottom:10}}>10:57 AM , 15 AUGUST, 2017</Text>
             <Text style={{position:'absolute',color:'white',fontSize:14,paddingLeft:240,paddingTop:40}}>Rs. {parAmount}</Text>
           </TouchableOpacity>
@@ -81,7 +82,7 @@ export class Passbook extends Component<{}> {
 
   render() {
     return (
-      <View  style={{backgroundColor:'#633ea5',height:window.height}}>
+      <View  style={{backgroundColor:'#21232F',height:window.height}}>
         <View style={{alignItems:'center'}}>
             <Text style={{color:'white',paddingTop:16,fontSize:20}}>PASSBOOK</Text>
           </View>
