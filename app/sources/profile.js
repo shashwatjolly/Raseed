@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
-import {
+import { 
+  Image,
   Text,
   View,
+  ScrollView,
   TouchableOpacity,
   Dimensions,
   TextInput
 } from 'react-native';
+
+import { Icon, Tile, Button, List, ListItem } from 'react-native-elements';
 
 const window = Dimensions.get('window');
 
@@ -19,11 +23,116 @@ export class Profile extends Component<{}> {
       <Text>Profile</Text>
     ),
   }
-
+  
   render() {
     return (
-      <View style={{backgroundColor:'#633ea5',height:window.height}}>
-        <Text>Profile</Text>
+    <View style={{flex: 1}}>
+      <ScrollView
+        contentContainerStyle={{ justifyContent: 'center', backgroundColor: '#633ea5', elevation: 10.0}}>
+        <Tile
+          containerStyle={{width: "100%"}}
+          imageContainerStyle={{ width: "100%"}}
+          imageSrc={require('../../assets/images/user.png')}
+          featured
+          title='Shashwat Jolly'
+          caption='sjolly'
+          activeOpacity={1}
+        />
+        <List
+        containerStyle={{ borderRadius: 4, alignSelf: 'center', justifyContent: 'center', width: '90%' }} >
+          <ListItem
+            title="Email"
+            leftIcon={{name: "email"}}
+            titleStyle={{color: '#633ea5', fontWeight: 'bold'}}
+            rightTitle='shashwat.jolly@gmail.com'
+            rightTitleStyle={{marginLeft: -50, color: 'black'}}
+            hideChevron
+          />
+          <ListItem
+            title="Phone"
+            containerStyle={{borderBottomWidth: 0}}
+            leftIcon={{name: "phone"}}
+            titleStyle={{color: '#633ea5', fontWeight: 'bold'}}
+            rightTitle='8486803505'
+            rightTitleStyle={{color: 'black'}}
+            hideChevron
+          />
+        </List>
+
+        <List
+          containerStyle={{ borderRadius: 4, alignSelf: 'center', justifyContent: 'center', width: '90%' }} >
+          <ListItem
+            containerStyle={{borderBottomWidth: 0}}
+            title="Username"
+            leftIcon={{name: "account-box"}}
+            titleStyle={{color: '#633ea5', fontWeight: 'bold'}}
+            rightTitle='sjolly'
+            rightTitleStyle={{color: 'black'}}
+            hideChevron
+          />
+        </List>
+
+        <List
+          containerStyle={{ borderRadius: 4, alignSelf: 'center', justifyContent: 'center', width: '90%' }} >
+          <ListItem
+            title="Gender"
+            leftIcon={{type: 'font-awesome', name: 'venus-mars'}}
+            titleStyle={{color: '#633ea5', fontWeight: 'bold'}}
+            rightTitle='Male'
+            rightTitleStyle={{color: 'black'}}
+            hideChevron
+          />
+          <ListItem
+            title="Birthday"
+            leftIcon={{type: 'font-awesome', name: "birthday-cake"}}
+            titleStyle={{color: '#633ea5', fontWeight: 'bold'}}
+            rightTitle='13/10/1998'
+            rightTitleStyle={{color: 'black'}}
+            hideChevron
+          />
+          <ListItem
+            containerStyle={{borderBottomWidth: 0}}
+            title="City"
+            leftIcon={{type: 'material-community', name: 'city'}}
+            titleStyle={{color: '#633ea5', fontWeight: 'bold'}}
+            rightTitle='Noida'
+            rightTitleStyle={{marginLeft: -50, color: 'black'}}
+            hideChevron
+          />
+        </List>
+        <List
+        containerStyle={{ borderRadius: 4, alignSelf: 'center', justifyContent: 'center', width: '90%' }} >
+          <ListItem
+            title="Spendings"
+            leftIcon={{type: 'material-community', name: "plus-circle-outline"}}
+            titleStyle={{color: '#633ea5', fontWeight: 'bold'}}
+            badge={{ value: '₹2000', textStyle: { color: '#ffffff' }, containerStyle: { marginLeft: -50, backgroundColor: '#633ea5' } }}
+            hideChevron
+          />
+          <ListItem
+            title="Earnings"
+            leftIcon={{type: 'material-community', name: "minus-circle-outline"}}
+            titleStyle={{color: '#633ea5', fontWeight: 'bold'}}
+            badge={{ value: '₹2000', textStyle: { color: '#ffffff' }, containerStyle: { marginLeft: -50, backgroundColor: '#633ea5' } }}            
+            hideChevron
+          />
+          <ListItem
+            title="Wallet Balance"
+            containerStyle={{borderBottomWidth: 0}}
+            leftIcon={{type: 'entypo', name: "wallet"}}
+            titleStyle={{color: '#633ea5', fontWeight: 'bold'}}
+            badge={{ value: '₹2000', textStyle: { color: '#ffffff' }, containerStyle: { marginLeft: -50, backgroundColor: '#633ea5' } }}
+            hideChevron
+          />
+        </List>
+
+        <Button
+          title="Log out"
+          icon={{type: 'material-community', name: 'logout'}}
+          buttonStyle={{ borderRadius: 10, alignSelf: 'center', width: '50%', backgroundColor: 'red', marginTop: 20 }}
+        />
+        <Text />
+      </ScrollView>
       </View>
     );
   }
