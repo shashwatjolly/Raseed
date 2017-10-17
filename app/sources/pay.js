@@ -26,10 +26,12 @@ export class Pay extends Component<{}> {
           paid : false,
           token : '',
           refreshIntervalId : '',
+          acceptedPay : false,
     }
    
    this.updateNewTrans = this.updateNewTrans.bind(this);
    this.generateReceipt = this.generateReceipt.bind(this);
+   this._acceptedPay = this._acceptedPay.bind(this);
   }
 
   componentWillMount(){
@@ -44,7 +46,7 @@ export class Pay extends Component<{}> {
     let transID =  NewTransaction().then(responseObj => this.updateNewTrans(responseObj)).catch();
 
     if(!this.state.pendingPayment){
-      this.state.refreshIntervalId =  setInterval(() => {this.fetchPaymentAPICall()},1000);
+      this.state.refreshIntervalId =  setInterval(() => {this.fetchPaymentAPICall()},100);
     }
 
     this.getUserMobile();
@@ -103,6 +105,12 @@ export class Pay extends Component<{}> {
     })
   }
 
+  _acceptedPay(){
+    this.setState({
+      acceptedPay : true,
+    });
+  }
+
   static navigationOptions = {
     title: 'Pay',
   }
@@ -131,8 +139,33 @@ export class Pay extends Component<{}> {
       }
 
       {this.state.pendingPayment && !this.state.paid &&
+        <View>
+        {!this.state.acceptedPay &&
 
+        <View style={{paddingTop:40,margin:20,borderRadius:4,alignItems:'center',marginTop:40}}>
+
+            <Text style={{color:'white',fontSize:20,paddingTop:0,fontWeight:'bold'}}>PAYMENT REQUEST</Text>
+
+            <Text style={{color:'#333',paddingTop:15,fontSize:18,fontWeight:'bold',color:'white'}}>{this.state.merchantName}</Text>
+
+            <Text style={{color:'#333',paddingTop:5,fontSize:14,color:'white'}}>10:05 AM , 10 AUGUST, 2017</Text>
+
+            <Text style={{color:'#333',paddingTop:15,fontSize:26,color:'white'}}>Rs {this.state.amount}</Text>
+
+            <TouchableOpacity style={{marginTop:40,flex:1,backgroundColor:'#1EB774',paddingTop:10,paddingBottom:50,width:window.width-40,alignItems:'center',borderRadius:4}} onPress={() => this._acceptedPay()}>
+                <Text style={{color:'white',paddingTop:0,fontSize:28}} >ACCEPT</Text>
+            </TouchableOpacity>
+            
+
+            <Text style={{color:'#ee5411',paddingTop:15,fontSize:20,fontWeight:'bold'}}>CANCEL</Text>
+
+
+        </View>
+
+      }
           
+      {this.state.acceptedPay &&
+
             <ScrollView>
               <WebView
               style={{borderRadius:4,height:window.height}}
@@ -143,6 +176,9 @@ export class Pay extends Component<{}> {
               />
         </ScrollView>
           
+      }
+
+      </View>
 
       }
 
@@ -161,14 +197,14 @@ export class Pay extends Component<{}> {
 
             <Text style={{color:'white',fontSize:16,paddingTop:0,fontWeight:'bold'}}>TRANSACTION SUCCESSFULL</Text>
 
-            <Text style={{color:'#333',paddingTop:5,fontSize:18,fontWeight:'bold'}}>Big Bazaar</Text>
+            <Text style={{color:'#333',paddingTop:5,fontSize:18,fontWeight:'bold'}}>{this.state.merchantName}</Text>
 
             <Text style={{color:'#333',paddingTop:5,fontSize:14}}>10:05 AM , 10 AUGUST, 2017</Text>
 
             <Text style={{color:'#333',paddingTop:25,fontSize:18,paddingBottom:20}}>Paid Using Debit Card</Text>
 
             <View style={{flex:1,backgroundColor:'#E94C3D',paddingTop:10,paddingBottom:50,width:window.width-40,alignItems:'center',borderRadius:4}}>
-                <Text style={{color:'white',paddingTop:0,fontSize:28}}>Rs. 123</Text>
+                <Text style={{color:'white',paddingTop:0,fontSize:28}}>Rs. {this.state.amount}</Text>
             </View>
           
         </View>

@@ -84,7 +84,7 @@ export function GetPayURL(amount) {
 		.then(function (data) {
 			responseObj.success = true;
 			console.log(data);
-			
+
 			return data;
 		})
 		.catch(function (error) {
@@ -92,3 +92,38 @@ export function GetPayURL(amount) {
 			console.log(error)
 		})
 }	
+
+
+export function AuthLogin(mobile) {
+	var reqObj = {};
+	var responseObj = {"success":false};
+	let url = 'http://52.187.64.222:3000/auth/login?mobile='+mobile;
+	return fetch(url)
+		.then((resp) => resp.json())
+		.then(function (data) {
+			responseObj.success = true;
+			//console.log(data);
+			return data;
+		})
+		.catch(function (error) {
+			responseObj.success = false;
+			console.log(error)
+		})
+}
+
+export function AllTransactions(mobile) {
+	var reqObj = {};
+	var responseObj = {"success":false};
+	let url = 'http://52.187.64.222:3000/transaction/allDebit?mobile='+mobile;
+	return fetch(url)
+		.then((resp) => resp.json())
+		.then(function (data) {
+			responseObj.success = true;
+			//console.log(data);
+			return data;
+		})
+		.catch(function (error) {
+			responseObj.success = false;
+			console.log(error)
+		})
+}

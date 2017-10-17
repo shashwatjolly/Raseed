@@ -27,6 +27,7 @@ export class Request extends Component<{}> {
     this.requestPaymentInitiate = this.requestPaymentInitiate.bind(this);
     this.paymentDoneUpdate = this.paymentDoneUpdate.bind(this);
     this.setUserMobile = this.setUserMobile.bind(this);
+    this._startFresh = this._startFresh.bind(this);
     this.refreshIntervalId = '';
   }
 
@@ -82,6 +83,16 @@ export class Request extends Component<{}> {
    }
   }
 
+  _startFresh(){
+    this.setState({
+          mobile : '',
+          amount : '',
+          requested : false,
+          token : '',
+          paymentDone : false,
+    });
+  }
+
 
   static navigationOptions = {
     title: 'Request',
@@ -135,16 +146,33 @@ export class Request extends Component<{}> {
           <Text style={{color:'white',fontSize:18}}>Request Sent</Text>
           <Text style={{color:'white',fontSize:18}}># {this.state.token}</Text>
           <Text style={{color:'white',fontSize:18}}>Waiting for customer</Text>
+
+
+
         </View>
 
       }
 
       {this.state.paymentDone &&
 
-        <View style={{alignItems:'center'}}>
-          <Text style={{color:'white',fontSize:18}}>Transaction Successfull</Text>
-          <Text style={{color:'white',fontSize:18}}># {this.state.token}</Text>
-          <Text style={{color:'white',fontSize:18}}>Amount - {this.state.amount}</Text>
+        <View style={{paddingTop:10,backgroundColor:'#1EB774',margin:20,borderRadius:4,alignItems:'center',marginTop:40}}>
+
+            <Text style={{color:'white',fontSize:16,paddingTop:0,fontWeight:'bold'}}>TRANSACTION SUCCESSFULL</Text>
+
+            <Text style={{color:'#333',paddingTop:5,fontSize:18,fontWeight:'bold'}}></Text>
+
+            <Text style={{color:'#333',paddingTop:5,fontSize:14}}>10:05 AM , 10 AUGUST, 2017</Text>
+
+            <Text style={{color:'#333',paddingTop:25,fontSize:18,paddingBottom:20}}>Paid Online</Text>
+
+            <View style={{backgroundColor:'#E94C3D',paddingTop:10,paddingBottom:10,width:window.width-40,alignItems:'center',borderRadius:4,}}>
+                <Text style={{color:'white',paddingTop:0,fontSize:28}}>Rs. {this.state.amount}</Text>
+            </View>
+
+            <View style={{backgroundColor:'#633ea5',width:window.width-40,alignItems:'center',paddingTop:40}}>
+              <Text style={{color:'white',fontSize:16}} onPress={() => this._startFresh()}>NEW REQUEST</Text>
+            </View>
+
         </View>
 
       }

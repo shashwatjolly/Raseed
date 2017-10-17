@@ -5,20 +5,65 @@ import {
   TouchableOpacity,
   Dimensions,
   TextInput,
-  Image
+  Image,
+  AsyncStorage
 } from 'react-native';
 
 import {SubModalStack} from '../config/routes';
 
-import {NewTransaction,ConfirmTransaction} from '../actions/api';
+import {NewTransaction,ConfirmTransaction,AuthLogin} from '../actions/api';
 
 const window = Dimensions.get('window');
 
 export class SwitchHome extends Component<{}> {
 
+  constructor(props){
+    super(props);
+
+    this.state={
+      userMobile : '',
+      rewards : 0,
+      refreshRewardsIntervalID : '',
+    }
+
+    this.setUserMobile = this.setUserMobile.bind(this);
+    this._updateRewards = this._updateRewards.bind(this);
+  }
+
+   componentWillMount(){
+    this.getUserMobile();
+  }
+
+  async getUserMobile(){
+    const value = await AsyncStorage.getItem('userMobile').then(userMobile => this.setUserMobile(userMobile)).catch();
+  }
+
+  setUserMobile(userMobile){
+    this.setState({
+      userMobile : userMobile,
+    });
+
+    let temp = AuthLogin(this.state.userMobile).then(responseObj => this._updateRewards(responseObj)).catch();
+
+    this.state.refreshRewardsIntervalID =  setInterval(() => {this._callUpdateRewards()},1000);
+
+  }
+
+  _callUpdateRewards(){
+     let temp = AuthLogin(this.state.userMobile).then(responseObj => this._updateRewards(responseObj)).catch();
+  }
+
+  _updateRewards(responseObj){
+    this.setState({
+      rewards : responseObj.rewards,
+    });
+  }
+
+
   componentDiDMount(){
 
   }
+
 
   fetchPendingPayment(){
 
@@ -49,10 +94,12 @@ export class SwitchHome extends Component<{}> {
 
         <Image source={require('../../assets/images/rbl-zeta-rupay.17589d71.png')}  style={{top:80,height:180,width:300}}/>
 
-        <View style={{backgroundColor:'#17e209',top:180,padding:6,width:window.width-60,borderRadius:4}}>
+        <View style={{top:window.height-430}}>
+        <Text style={{paddingLeft:0,fontSize:16,paddingBottom:5,color:'white'}}>Total Rewards - Rs. {this.state.rewards}</Text>
+        <View style={{backgroundColor:'#17e209',padding:6,width:window.width-60,borderRadius:4}}>
               <Text style={{color:'#333'}}>CASHCARD PLUS</Text>
         </View>
-
+        </View>
       </View>
     );
   }
