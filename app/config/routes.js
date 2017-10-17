@@ -10,7 +10,8 @@ import {Passbook} from '../sources/passbook';
 import {Profile} from '../sources/profile';
 import {Offers} from '../sources/offers';
 import {SwitchHome} from '../sources/switchHome';
-import {Receipt} from '../sources/receipt';
+
+import { Icon } from 'react-native-elements';
 
 export const ModalStack = StackNavigator({
   Splash:{
@@ -38,9 +39,6 @@ export const SubModalStack  = StackNavigator({
   Passbook : {
   	screen : Passbook,
   },
-  Receipt : {
-    screen : Receipt,
-  }
 },
 
 	{headerMode:'none'}
@@ -51,24 +49,22 @@ export const Tabs = TabNavigator({
    IntroHome: {
     screen: IntroHome,
     navigationOptions: {
+      orientation: 'portrait',
       tabBarLabel: 'Home',
-      tabBarIcon: ({ tintColor }) => <Text>Home</Text>,
-    },
+      tabBarIcon: ({ tintColor }) => <Icon name="home" size={26} color={tintColor} />    },
   },
   
   Profile: {
     screen: Profile,
     navigationOptions: {
       tabBarLabel: 'Profile',
-      tabBarIcon: ({ tintColor }) => <Text>Profile</Text>,
-    },
+      tabBarIcon: ({ tintColor }) => <Icon name="account-circle" size={26} color={tintColor} />    },
   },
   Offers: {
     screen: Offers,
     navigationOptions: {
       tabBarLabel: 'Offers',
-      tabBarIcon: ({ tintColor }) => <Text>Offers</Text>
-    },
+      tabBarIcon: ({ tintColor }) => <Icon name="local-offer" size={26} color={tintColor} />    },
   },
 },
 	
@@ -76,12 +72,17 @@ export const Tabs = TabNavigator({
   tabBarPosition: 'bottom',
   tabBarOptions: {
     activeTintColor: 'white',
+    showIcon: 'true',
+    iconStyle: {
+      margin:0,
+    },
     labelStyle: {
-      fontFamily: 'Montserrat-Regular',
-  },
+        fontSize: 11,
+        margin:1,
+      },
      style: {
-    backgroundColor: '#21232F',
-    fontFamily: 'Montserrat-Regular'
+    backgroundColor: '#633ea5',
+    height: 50
   },
   },
 }

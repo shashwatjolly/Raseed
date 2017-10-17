@@ -3,7 +3,6 @@ import {
   Image,
   Text,
   View,
-  ScrollView,
   TouchableOpacity,
   Dimensions,
   TextInput,
@@ -26,7 +25,7 @@ export class Profile extends Component<{}> {
 
     <View style={{flex: 1}}>
       <ScrollView
-        contentContainerStyle={{ justifyContent: 'center', backgroundColor: '#633ea5', elevation: 10.0}}>
+        contentContainerStyle={{ justifyContent: 'center', backgroundColor: '#21232F', elevation: 10.0}}>
         <Tile
           containerStyle={{width: "100%"}}
           imageContainerStyle={{ width: "100%"}}
@@ -41,7 +40,7 @@ export class Profile extends Component<{}> {
           <ListItem
             title="Email"
             leftIcon={{name: "email"}}
-            titleStyle={{color: '#633ea5', fontWeight: 'bold'}}
+            titleStyle={{color: '#21232F', fontWeight: 'bold'}}
             rightTitle='shashwat.jolly@gmail.com'
             rightTitleStyle={{marginLeft: -50, color: 'black'}}
             hideChevron
@@ -50,7 +49,7 @@ export class Profile extends Component<{}> {
             title="Phone"
             containerStyle={{borderBottomWidth: 0}}
             leftIcon={{name: "phone"}}
-            titleStyle={{color: '#633ea5', fontWeight: 'bold'}}
+            titleStyle={{color: '#21232F', fontWeight: 'bold'}}
             rightTitle='8486803505'
             rightTitleStyle={{color: 'black'}}
             hideChevron
@@ -63,7 +62,7 @@ export class Profile extends Component<{}> {
             containerStyle={{borderBottomWidth: 0}}
             title="Username"
             leftIcon={{name: "account-box"}}
-            titleStyle={{color: '#633ea5', fontWeight: 'bold'}}
+            titleStyle={{color: '#21232F', fontWeight: 'bold'}}
             rightTitle='sjolly'
             rightTitleStyle={{color: 'black'}}
             hideChevron
@@ -75,7 +74,7 @@ export class Profile extends Component<{}> {
           <ListItem
             title="Gender"
             leftIcon={{type: 'font-awesome', name: 'venus-mars'}}
-            titleStyle={{color: '#633ea5', fontWeight: 'bold'}}
+            titleStyle={{color: '#21232F', fontWeight: 'bold'}}
             rightTitle='Male'
             rightTitleStyle={{color: 'black'}}
             hideChevron
@@ -83,7 +82,7 @@ export class Profile extends Component<{}> {
           <ListItem
             title="Birthday"
             leftIcon={{type: 'font-awesome', name: "birthday-cake"}}
-            titleStyle={{color: '#633ea5', fontWeight: 'bold'}}
+            titleStyle={{color: '#21232F', fontWeight: 'bold'}}
             rightTitle='13/10/1998'
             rightTitleStyle={{color: 'black'}}
             hideChevron
@@ -92,7 +91,7 @@ export class Profile extends Component<{}> {
             containerStyle={{borderBottomWidth: 0}}
             title="City"
             leftIcon={{type: 'material-community', name: 'city'}}
-            titleStyle={{color: '#633ea5', fontWeight: 'bold'}}
+            titleStyle={{color: '#21232F', fontWeight: 'bold'}}
             rightTitle='Noida'
             rightTitleStyle={{marginLeft: -50, color: 'black'}}
             hideChevron
@@ -103,23 +102,23 @@ export class Profile extends Component<{}> {
           <ListItem
             title="Spendings"
             leftIcon={{type: 'material-community', name: "plus-circle-outline"}}
-            titleStyle={{color: '#633ea5', fontWeight: 'bold'}}
-            badge={{ value: '₹2000', textStyle: { color: '#ffffff' }, containerStyle: { marginLeft: -50, backgroundColor: '#633ea5' } }}
+            titleStyle={{color: '#21232F', fontWeight: 'bold'}}
+            badge={{ value: '₹2000', textStyle: { color: '#ffffff' }, containerStyle: { marginLeft: -50, backgroundColor: '#21232F' } }}
             hideChevron
           />
           <ListItem
             title="Earnings"
             leftIcon={{type: 'material-community', name: "minus-circle-outline"}}
-            titleStyle={{color: '#633ea5', fontWeight: 'bold'}}
-            badge={{ value: '₹2000', textStyle: { color: '#ffffff' }, containerStyle: { marginLeft: -50, backgroundColor: '#633ea5' } }}            
+            titleStyle={{color: '#21232F', fontWeight: 'bold'}}
+            badge={{ value: '₹2000', textStyle: { color: '#ffffff' }, containerStyle: { marginLeft: -50, backgroundColor: '#21232F' } }}            
             hideChevron
           />
           <ListItem
             title="Wallet Balance"
             containerStyle={{borderBottomWidth: 0}}
             leftIcon={{type: 'entypo', name: "wallet"}}
-            titleStyle={{color: '#633ea5', fontWeight: 'bold'}}
-            badge={{ value: '₹2000', textStyle: { color: '#ffffff' }, containerStyle: { marginLeft: -50, backgroundColor: '#633ea5' } }}
+            titleStyle={{color: '#21232F', fontWeight: 'bold'}}
+            badge={{ value: '₹2000', textStyle: { color: '#ffffff' }, containerStyle: { marginLeft: -50, backgroundColor: '#21232F' } }}
             hideChevron
           />
         </List>
