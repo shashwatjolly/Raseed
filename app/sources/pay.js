@@ -122,7 +122,7 @@ export class Pay extends Component<{}> {
       
         {!(this.state.pendingPayment && !this.state.paid ) &&
           <View style={{alignItems:'center'}}>
-            <Text style={{color:'white',paddingTop:10,fontSize:24}}>PAY</Text>
+            <Text style={{color:'white',paddingTop:10,fontSize:24,fontFamily: 'Montserrat-Regular'}}>PAY</Text>
           </View>
         }
 
@@ -130,10 +130,10 @@ export class Pay extends Component<{}> {
 
           <View style={{alignItems:'center'}}>
 
-          <Image source={require('../../assets/images/embarrassed.png')} style={{height:150,width:150,paddingBottom:20,top:100}}/>
+          <Image source={require('../../assets/images/embarrassed.png')} style={{height:120,width:120,paddingBottom:20,top:100}}/>
 
-          <Text style={{color:'white',paddingTop:10,fontSize:18,top:120}}>Hey, It looks like you don't</Text>  
-          <Text style={{color:'white',paddingTop:0,fontSize:18,top:120}}>have any pending payments</Text>  
+          <Text style={{color:'white',paddingTop:10,fontSize:18,top:120,fontFamily: 'Montserrat-Regular'}}>Hey, It looks like you don't</Text>  
+          <Text style={{color:'white',paddingTop:0,fontSize:18,top:120,fontFamily: 'Montserrat-Regular'}}>have any pending payments</Text>  
 
         </View>
       }

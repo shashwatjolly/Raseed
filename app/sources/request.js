@@ -6,7 +6,8 @@ import {
   Dimensions,
   TextInput,
   AsyncStorage,
-  Alert
+  Alert,
+  Image
 } from 'react-native';
 
 import {RequestTransaction,TransactionStatus} from '../actions/api.js';
@@ -48,7 +49,7 @@ export class Request extends Component<{}> {
   requestPaymentInitiateApiCall(){
     console.log(this.state.mobile);
     if(this.state.mobile != this.state.userMobile){
-      let temp = RequestTransaction(this.state.mobile,this.state.amount).then(responseObj => this.requestPaymentInitiate(responseObj)).catch();
+      let temp = RequestTransaction(this.state.mobile,this.state.amount,this.state.userMobile).then(responseObj => this.requestPaymentInitiate(responseObj)).catch();
     }else{
       Alert.alert(
                   'Oops...',
@@ -102,7 +103,7 @@ export class Request extends Component<{}> {
   render() {
     return (
       <View style={{backgroundColor:'#21232F',height:window.height,alignItems:'center'}}>
-        <Text style={{color:'white',paddingTop:10,fontSize:24}}>REQUEST</Text>
+        <Text style={{color:'white',paddingTop:10,fontSize:24,fontFamily: 'Montserrat-Regular'}}>REQUEST</Text>
 
       {!this.state.requested &&
         <View style={{alignItems:'center'}}>
@@ -142,10 +143,11 @@ export class Request extends Component<{}> {
 
       {this.state.requested && !this.state.paymentDone &&
 
-        <View style={{alignItems:'center'}}>
-          <Text style={{color:'white',fontSize:18}}>Request Sent</Text>
-          <Text style={{color:'white',fontSize:18}}># {this.state.token}</Text>
-          <Text style={{color:'white',fontSize:18}}>Waiting for customer</Text>
+        <View style={{alignItems:'center',marginTop:50}}>
+          <Text style={{color:'white',fontSize:18}}>Request Sent ...</Text>
+          
+          <Text style={{color:'white',fontSize:14,paddingTop:20}}>TRANSACTION ID - # {this.state.token}</Text>
+          <Text style={{color:'white',fontSize:14,paddingTop:10}}>WAITING FOR CUSTOMER</Text>
 
 
 
@@ -157,20 +159,20 @@ export class Request extends Component<{}> {
 
         <View style={{paddingTop:10,backgroundColor:'#1EB774',margin:20,borderRadius:4,alignItems:'center',marginTop:40}}>
 
-            <Text style={{color:'white',fontSize:16,paddingTop:0,fontWeight:'bold'}}>TRANSACTION SUCCESSFULL</Text>
+            <Text style={{color:'white',fontSize:16,paddingTop:0,fontFamily: 'Montserrat-Regular'}}>TRANSACTION SUCCESSFULL</Text>
 
-            <Text style={{color:'#333',paddingTop:5,fontSize:18,fontWeight:'bold'}}></Text>
+            <Text style={{color:'#333',paddingTop:5,fontSize:18,fontWeight:'bold',fontFamily: 'Montserrat-Regular'}}></Text>
 
-            <Text style={{color:'#333',paddingTop:5,fontSize:14}}>10:05 AM , 10 AUGUST, 2017</Text>
+            <Text style={{color:'#333',paddingTop:5,fontSize:14,fontFamily: 'Montserrat-Regular'}}>10:05 AM , 10 AUGUST, 2017</Text>
 
-            <Text style={{color:'#333',paddingTop:25,fontSize:18,paddingBottom:20}}>Paid Online</Text>
+            <Text style={{color:'#333',paddingTop:25,fontSize:18,paddingBottom:20,fontFamily: 'Montserrat-Regular'}}>Paid Online</Text>
 
-            <View style={{backgroundColor:'#E94C3D',paddingTop:10,paddingBottom:10,width:window.width-40,alignItems:'center',borderRadius:4,}}>
-                <Text style={{color:'white',paddingTop:0,fontSize:28}}>Rs. {this.state.amount}</Text>
+            <View style={{backgroundColor:'#E94C3D',paddingTop:10,paddingBottom:10,width:window.width-40,alignItems:'center',borderRadius:0}}>
+                <Text style={{color:'white',paddingTop:0,fontSize:28,fontFamily: 'Montserrat-Regular'}}>Rs. {this.state.amount}</Text>
             </View>
 
-            <View style={{backgroundColor:'#633ea5',width:window.width-40,alignItems:'center',paddingTop:40}}>
-              <Text style={{color:'white',fontSize:16}} onPress={() => this._startFresh()}>NEW REQUEST</Text>
+            <View style={{backgroundColor:'#21232F',width:window.width-40,alignItems:'center',paddingTop:40,fontFamily: 'Montserrat-Regular'}}>
+              <Text style={{color:'white',fontSize:16,fontFamily: 'Montserrat-Regular'}} onPress={() => this._startFresh()}>NEW REQUEST</Text>
             </View>
 
         </View>
