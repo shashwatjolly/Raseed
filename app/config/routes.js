@@ -81,7 +81,7 @@ export const Tabs = TabNavigator({
         margin:1,
       },
      style: {
-    backgroundColor: '#633ea5',
+    backgroundColor: '#21232F',
     height: 50
   },
   },

@@ -7,10 +7,13 @@ import {
   Dimensions,
   TextInput,
   WebView,
-  ScrollView
+  ScrollView,
+  AsyncStorage,
 } from 'react-native';
 
 import { Icon, Tile, Button, List, ListItem } from 'react-native-elements';
+
+import {AuthLogin} from '../actions/api';
 
 const window = Dimensions.get('window');
 
@@ -20,7 +23,59 @@ export class Profile extends Component<{}> {
     title: 'Receipt', 
   }
   
+
+  constructor(props){
+    super(props);
+    this.state={
+      userMobile : '',
+      credit : '',
+      debit : '',
+      rewards : '',
+      userID : '',
+      userName : 'Shashwat',
+      refreshRewardsIntervalID : '',
+    }
+
+    this.setUserMobile = this.setUserMobile.bind(this);
+  }
+
+  componentWillMount(){
+    this.getUserMobile();
+  }
+
+  async getUserMobile(){
+
+    const value = await AsyncStorage.getItem('userMobile').then(userMobile => this.setUserMobile(userMobile)).catch();
+
+  }
+
+
+  setUserMobile(userMobile){
+    this.setState({
+      userMobile : String(userMobile),
+    }); 
+
+    this.state.refreshRewardsIntervalID =  setInterval(() => {this._callBalanceAPI()},1000);
+
+}
+
+  
+  _callBalanceAPI(){
+    let temp = AuthLogin(this.state.userMobile).then(responseObj => this._setBalance(responseObj)).catch();
+  }
+
+  _setBalance(responseObj){
+    this.setState({
+      credit : responseObj.credit,
+      debit : responseObj.debit,
+      rewards : parseInt(responseObj.rewards),
+    });
+  }
+
+
   render() {
+
+    let userMob = '' + this.state.userMobile;
     return (
 
     <View style={{flex: 1}}>
@@ -46,11 +101,11 @@ export class Profile extends Component<{}> {
             hideChevron
           />
           <ListItem
-            title="Phone"
+            title={this.state.userMobile}
             containerStyle={{borderBottomWidth: 0}}
             leftIcon={{name: "phone"}}
             titleStyle={{color: '#21232F', fontWeight: 'bold'}}
-            rightTitle='8486803505'
+            rightTitle='Phone'
             rightTitleStyle={{color: 'black'}}
             hideChevron
           />
@@ -103,14 +158,14 @@ export class Profile extends Component<{}> {
             title="Spendings"
             leftIcon={{type: 'material-community', name: "plus-circle-outline"}}
             titleStyle={{color: '#21232F', fontWeight: 'bold'}}
-            badge={{ value: '₹2000', textStyle: { color: '#ffffff' }, containerStyle: { marginLeft: -50, backgroundColor: '#21232F' } }}
+            badge={{ value: <Text>{this.state.debit}</Text>, textStyle: { color: '#ffffff' }, containerStyle: { marginLeft: -50, backgroundColor: '#21232F' } }}
             hideChevron
           />
           <ListItem
             title="Earnings"
             leftIcon={{type: 'material-community', name: "minus-circle-outline"}}
             titleStyle={{color: '#21232F', fontWeight: 'bold'}}
-            badge={{ value: '₹2000', textStyle: { color: '#ffffff' }, containerStyle: { marginLeft: -50, backgroundColor: '#21232F' } }}            
+            badge={{ value: <Text>{this.state.credit}</Text>, textStyle: { color: '#ffffff' }, containerStyle: { marginLeft: -50, backgroundColor: '#21232F' } }}            
             hideChevron
           />
           <ListItem
@@ -118,7 +173,7 @@ export class Profile extends Component<{}> {
             containerStyle={{borderBottomWidth: 0}}
             leftIcon={{type: 'entypo', name: "wallet"}}
             titleStyle={{color: '#21232F', fontWeight: 'bold'}}
-            badge={{ value: '₹2000', textStyle: { color: '#ffffff' }, containerStyle: { marginLeft: -50, backgroundColor: '#21232F' } }}
+            badge={{ value: <Text>{this.state.rewards}</Text>, textStyle: { color: '#ffffff' }, containerStyle: { marginLeft: -50, backgroundColor: '#21232F' } }}
             hideChevron
           />
         </List>
