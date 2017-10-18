@@ -60,17 +60,40 @@ export class Passbook extends Component<{}> {
 
   _updatePassbook(responseObj){
 
-    let tempResponseObj = responseObj.creditObjects.length;
+    let tempResponseObj = responseObj.transObj.length;
 
-    for(var i=0;i<tempResponseObj;i++){
-      let parAmount = responseObj.creditObjects[i].amount;
-      let parMerchantName = responseObj.creditObjects[i].merchantName;
+    for(var i=tempResponseObj-1;i>=0;i--){
+      let parAmount = responseObj.transObj[i].amount;
+     
+      let typeOfTrans = '';
+
+       if(responseObj.transObj[i].merchantMobile==this.state.userMobile){
+        typeOfTrans = 'CREDIT (+)';
+      }else{
+        typeOfTrans = 'DEBIT (-)';
+      }
+
+      let dateAndTime = String(new Date(responseObj.transObj[i].creationTimeStamp));
+      dateAndTime = dateAndTime.substring(0,dateAndTime.length-18);
+
+      if(!responseObj.transObj[i].merchantName){
+        parMerchantName = 'Example Inc';
+      }else{
+        if(responseObj.transObj[i].merchantMobile==this.state.userMobile){
+          parMerchantName = responseObj.transObj[i].mobile;
+        }else{
+          parMerchantName = responseObj.transObj[i].merchantName;
+        }
+      }
+
+
+     
       this.state.allTrans.push(
            <TouchableOpacity style={{margin:10,backgroundColor:'#F65224',borderRadius:40}} onPress={() => this.props.navigation.navigate('Receipt')}>
-            <Text style={{color:'white',fontSize:16,paddingLeft:20,paddingTop:10,paddingBottom:0}}>{parMerchantName}</Text>
-            <Text style={{position:'absolute',color:'white',fontSize:18,paddingLeft:240,paddingTop:10,paddingBottom:10,fontWeight:'bold'}}>DEBIT (-)</Text>
-            <Text style={{color:'white',fontSize:12,paddingLeft:20,paddingTop:10,paddingBottom:10}}>10:57 AM , 15 AUGUST, 2017</Text>
-            <Text style={{position:'absolute',color:'white',fontSize:14,paddingLeft:240,paddingTop:40}}>Rs. {parAmount}</Text>
+            <Text style={{color:'white',fontSize:16,paddingLeft:20,paddingTop:10,paddingBottom:0,fontFamily: 'Montserrat-Regular'}}>{parMerchantName}</Text>
+            <Text style={{position:'absolute',color:'white',fontSize:18,paddingLeft:220,paddingTop:10,paddingBottom:10,fontFamily: 'Montserrat-Regular'}}>{typeOfTrans}</Text>
+            <Text style={{color:'white',fontSize:12,paddingLeft:20,paddingTop:10,paddingBottom:10,fontFamily: 'Montserrat-Regular'}}>{dateAndTime}</Text>
+            <Text style={{position:'absolute',color:'white',fontSize:14,paddingLeft:220,paddingTop:40,paddingBottom:240,fontFamily: 'Montserrat-Regular'}}>Rs. {parAmount}</Text>
           </TouchableOpacity>
         )
       this.setState({
@@ -84,7 +107,7 @@ export class Passbook extends Component<{}> {
     return (
       <View  style={{backgroundColor:'#21232F',height:window.height}}>
         <View style={{alignItems:'center'}}>
-            <Text style={{color:'white',paddingTop:16,fontSize:20}}>PASSBOOK</Text>
+            <Text style={{color:'white',paddingTop:16,fontSize:24,fontFamily: 'Montserrat-Regular'}}>PASSBOOK</Text>
           </View>
 
         <ScrollView style={{paddingTop:16}}>

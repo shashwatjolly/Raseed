@@ -58,6 +58,8 @@ export class Splash extends Component<{}> {
               autoFocus={true}
             />
 
+            
+            
             <TextInput
               underlineColorAndroid='transparent'
               placeholderTextColor='white'
