@@ -229,7 +229,7 @@ export class SwitchHome extends Component<{}> {
         	style={{position: 'absolute', width: 80, height: 80, backgroundColor: '#1f4182', borderRadius: 50, transform: [{scale: scale3}], opacity: opacity3}}/>
         <Animated.View 
         	style={{alignItems: 'center', justifyContent: 'center', position: 'absolute', width: 80, height: 80, backgroundColor: '#3366CC', borderRadius: 50, transform: [{scale: this.springValue}]}}>
-        	<Text style= {{fontSize: 25, color: '#bfc6ff'}}> रसीद </Text>
+        	<Text style= {{fontSize: 25, color: '#bfc6ff'}} onPress={() => this.props.navigation.navigate('Pay')}> रसीद </Text>
         </Animated.View>
         
         </View>
