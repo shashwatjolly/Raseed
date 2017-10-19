@@ -101,12 +101,11 @@ export class Profile extends Component<{}> {
             hideChevron
           />
           <ListItem
-            title={this.state.userMobile}
+            title="Phone"
             containerStyle={{borderBottomWidth: 0}}
             leftIcon={{name: "phone"}}
             titleStyle={{color: '#21232F', fontWeight: 'bold'}}
-            rightTitle='Phone'
-            rightTitleStyle={{color: 'black'}}
+            badge={{ value: <Text>{this.state.userMobile}</Text>, textStyle: { color: '#ffffff' }, containerStyle: { marginLeft: -50, backgroundColor: '#21232F' } }}
             hideChevron
           />
         </List>

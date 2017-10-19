@@ -234,13 +234,7 @@ export class SwitchHome extends Component<{}> {
         
         </View>
 
-        <View style={{top:window.height-360,alignItems:'center'}}>
-        
-          <Text style={{color:'white',fontSize:16,fontFamily: 'Montserrat-Regular'}}>No Recent Transactions</Text>
-     
-        </View>
-
-        <View style={{top:window.height-340}}>
+        <View style={{position: 'absolute', top:window.height-150}}>
         <Text style={{paddingLeft:10,fontSize:16,paddingBottom:5,color:'white',fontFamily: 'Montserrat-Regular'}}>Total Rewards - Rs. {this.state.rewards}</Text>
         <View style={{backgroundColor:'#17e209',padding:6,width:window.width-60,borderRadius:40}}>
               <Text style={{color:'#333',fontFamily: 'Montserrat-Regular',paddingLeft:10}}>CASHCARD PLUS</Text>
