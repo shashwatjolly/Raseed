@@ -81,6 +81,16 @@ Bugs
   The app payment confirmation is sent always to the same app e-mail id : raseedinc@gmail.com
 
 
+Future Features
+---------------------------------------------------------------------------------------------------
+
+* Using blockchain to make a more secure system of peer to peer payments.
+* Offline payments through local wireless network in which the customer and merchant do not require to be connected to the internet.
+* Tie ups with merchants and organizations to provide discounts and cashbacks to users.
+* Using fingerprint authentication to secure entry into the app and payments from the app.
+* Using Microsoft CodePush to update the app on the fly.
+
+
 Contact Us
 ---------------------------------------------------------------------------------------------------
 
@@ -91,3 +101,5 @@ Suggestions are welcome. Feel free to contact us at :
 +91-8486803505
 
 +91-9953618688
+
+
