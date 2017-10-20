@@ -24,7 +24,7 @@ Usage
 * Homescreen
   - Request option is there to request payment from another user.
   - Pay option lets you pay to all the pending requests according to your choice.
-  - Passbook option shows all your transactions at one place.
+  - Passbook option shows all your transactions at one place. Touch a transaction to open its receipt.
 * User only needs to touch the center "Raseed" icon to make pending payments.
 * Profile section shows all the details of current user and updates them at every transaction.
 * Offers section will show the offers provided by various companies.
