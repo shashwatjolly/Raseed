@@ -63,3 +63,8 @@ Bugs
 * At present, the Offers section is hardcoded and will be updated in future. The offers are not dynamic.
 * After the final payment, the instamojo payment receipt is sent immediately to the e-mail ID provided by the user.
   Although, the app payment confirmation is sent to the same app e-mail id : raseedinc@gmail.com
+
+
+Contact Us
+---------------------------------------------------------------------------------------------------
+Suggestions are welcome. Feel free to mail us at raseedinc@gmail.com
