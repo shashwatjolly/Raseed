@@ -90,6 +90,7 @@ export class Profile extends Component<{}> {
           caption='sjolly'
           activeOpacity={1}
         />
+        
         <List
         containerStyle={{ borderRadius: 4, alignSelf: 'center', justifyContent: 'center', width: '90%' }} >
           <ListItem

@@ -10,6 +10,7 @@ import {Passbook} from '../sources/passbook';
 import {Profile} from '../sources/profile';
 import {Offers} from '../sources/offers';
 import {SwitchHome} from '../sources/switchHome';
+import {Receipt} from '../sources/receipt';
 
 import { Icon } from 'react-native-elements';
 
@@ -39,6 +40,9 @@ export const SubModalStack  = StackNavigator({
   Passbook : {
   	screen : Passbook,
   },
+  Receipt : {
+    screen : Receipt,
+  }
 },
 
 	{headerMode:'none'}
@@ -73,6 +77,7 @@ export const Tabs = TabNavigator({
   tabBarOptions: {
     activeTintColor: 'white',
     showIcon: 'true',
+    indicatorStyle: {backgroundColor: '#3366CC'},
     iconStyle: {
       margin:0,
     },
