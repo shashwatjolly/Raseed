@@ -17,8 +17,10 @@ Usage
   - Request option is there to request payment from another user.
   - Pay option lets you pay to all requests according to your choice.
   - Passbook option shows all your transactions at one place.
-* Profile section shows the details of current user.
-* Offers section will show the offers provided by various companies. At present, this section is hardcoded and will be updated in future.
+* User only needs to touch the center icon to make pending payments. Cancel option is not in working state at present.
+* Profile section shows the details of current user. In the profile section, the details - Phone, Spendings, Earnings
+  and Rewards are regularly updated. At present, the rest of the details are hardcoded and cannot be changed.
+* Offers section will show the offers provided by various companies. At present, this section is hardcoded at present and will be updated in future.
 
 *For every transaction, the receipt of payment/bill is provided and e-mailed to e-mail address provided by the user*
 
