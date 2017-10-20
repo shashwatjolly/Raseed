@@ -86,4 +86,8 @@ Contact Us
 
 Suggestions are welcome. Feel free to contact us at :
 
-+91-	8750507753	8486803505	9953618688
++91-8750507753
+
++91-8486803505
+
++91-9953618688
