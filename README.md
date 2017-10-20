@@ -17,6 +17,7 @@ Usage
   - Request option is there to request payment from another user.
   - Pay option lets you pay to all requests according to your choice.
   - Passbook option shows all your transactions at one place.
+
 *For every transaction, the receipt of payment/bill is provided and e-mailed to e-mail address provided by the user*
 
 
