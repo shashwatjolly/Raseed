@@ -37,6 +37,7 @@ The sample login credentials for testing are :
 	5. 9350865446
 * Password for any of them : 2017
 * Mode of payment : Debit Card
+  
   Details of debit card :
   - No.				-	4242 4242 4242 4242
   - Expiry  			-	05/22
