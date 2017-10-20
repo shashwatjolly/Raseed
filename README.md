@@ -19,7 +19,7 @@ Usage
   - Passbook option shows all your transactions at one place.
 * Debit Credit Mobile
 * Profile section shows the details of current user.
-* Offers section will show the offers provided by various companies. At present, this section is hardcoded and will be updatedin future.
+* Offers section will show the offers provided by various companies. At present, this section is hardcoded and will be updated in future.
 
 *For every transaction, the receipt of payment/bill is provided and e-mailed to e-mail address provided by the user*
 
