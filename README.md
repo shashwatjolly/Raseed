@@ -17,12 +17,12 @@ Usage
   - Request option is there to request payment from another user.
   - Pay option lets you pay to all requests according to your choice.
   - Passbook option shows all your transactions at one place.
-***** For every transaction, the receipt of payment/bill is provided and e-mailed to e-mail address provided by the user
+*For every transaction, the receipt of payment/bill is provided and e-mailed to e-mail address provided by the user*
 
 
 Testing
 ---------------------------------------------------------------------------------------------------
-the sample login credentials for testing are :
+The sample login credentials for testing are :
 * Mobile no.s :
 	1. 9876543210
 	2. 8765432109
