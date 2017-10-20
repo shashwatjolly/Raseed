@@ -1,3 +1,5 @@
+This application is made to replace all the paper bills/receipts with the digital receipts. 
+
 Installation
 ---------------------------------------------------------------------------------------------------
 Download the apk file in your phone and install it.
@@ -56,7 +58,8 @@ Bugs
 * Because instamojo payment gateway is used, maximum transaction limit is 2 lacs per transaction.
 * During payment procedure, cancel option is not in a working state at present.
 * In the profile section, the details - Phone, Spendings, Earnings and Rewards are regularly updated.
-  At present, the rest of the details are hardcoded and fixed.
+  At present, the rest of the details are hardcoded and fixed. Also, though the rewards get updated regularly, 
+  they are never converted to money.
 * At present, the Offers section is hardcoded and will be updated in future. The offers are not dynamic.
 * After the final payment, the instamojo payment receipt is sent immediately to the e-mail ID provided by the user.
   Although, the app payment confirmation is sent to the same app e-mail id : raseedinc@gmail.com
