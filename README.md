@@ -3,16 +3,16 @@ Installation
 Download the apk file in your phone and install it.
 
 
-OS
+OS Requirements
 ---------------------------------------------------------------------------------------------------
-The application is meant for mobile phones running on android platform only.
-
+* This application is meant for mobile phones running on android platform only.
+  - Android version 6 is recommended for best experience.
+  - Runs well on all android versions including android 5 and above.
+* This application is best viewed on a 5.2 inch smartphone.
+* This application is meant only for the networks without proxy.
 
 Usage
 ---------------------------------------------------------------------------------------------------
-* The app is best viewed on 5.2 inches smartphone.
-* The app is meant only for the networks without proxy.
-* Once closed, the user is required to login again by providing credentials.
 * Homescreen
   - Request option is there to request payment from another user.
   - Pay option lets you pay to all the pending requests according to your choice.
@@ -21,6 +21,7 @@ Usage
 * Profile section shows the details of current user. In the profile section, the details - Phone, Spendings, Earnings
   and Rewards are regularly updated. At present, the rest of the details are hardcoded and fixed.
 * Offers section will show the offers provided by various companies. At present, this section is hardcoded and will be updated in future.
+* Once closed, the user is required to login again by providing credentials.
 
 *For every transaction, the receipt of payment/bill is provided immediately and e-mailed to e-mail address provided by the user*
 
@@ -41,8 +42,3 @@ The sample login credentials for testing are :
   - Expiry  			-	05/22
   - CVV 			-	111
   -  Master Card secure code 	-	1221
-
-
-Avg CPU Usage
----------------------------------------------------------------------------------------------------
-Avg CPU Usage is 0.5% but it grows up when transaction is in process.
