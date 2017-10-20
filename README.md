@@ -32,10 +32,10 @@ the sample login credentials for testing are :
 * Password for any of them : 2017
 * Mode of payment : Debit Card
   Details of debit card :
-	no.			-	4242 4242 4242 4242
-	expiry  		-	05/22
-	cvv 			-	111
-	master card secure code -	1221
+  - No.				-	4242 4242 4242 4242
+  - Expiry  			-	05/22
+  - CVV 			-	111
+  -  Master Card secure code 	-	1221
 
 
 Avg CPU Usage
