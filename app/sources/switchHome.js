@@ -238,7 +238,7 @@ export class SwitchHome extends Component<{}> {
         <View style={{position: 'absolute', top:window.height-150}}>
         <Text style={{paddingLeft:10,fontSize:16,paddingBottom:5,color:'white',fontFamily: 'Montserrat-Regular'}}>Total Rewards - Rs. {this.state.rewards}</Text>
         <View style={{backgroundColor:'#17e209',padding:6,width:window.width-60,borderRadius:40}}>
-              <Text style={{color:'#333',fontFamily: 'Montserrat-Regular',paddingLeft:10}}>CASHCARD PLUS</Text>
+              <Text style={{color:'#333',fontFamily: 'Montserrat-Regular',paddingLeft:10}}>REWARD CARD PLUS</Text>
         </View>
         </View>
       </View>

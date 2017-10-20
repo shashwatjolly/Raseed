@@ -32,6 +32,7 @@ export class Pay extends Component<{}> {
    this.updateNewTrans = this.updateNewTrans.bind(this);
    this.generateReceipt = this.generateReceipt.bind(this);
    this._acceptedPay = this._acceptedPay.bind(this);
+   this._updatePayURL = this._updatePayURL.bind(this);
   }
 
   componentWillMount(){
@@ -42,6 +43,7 @@ export class Pay extends Component<{}> {
           paid : false,
           timeCreated : '',
           userMobile : '',
+          payURL : '',
     })
     let transID =  NewTransaction().then(responseObj => this.updateNewTrans(responseObj)).catch();
 
@@ -82,9 +84,20 @@ export class Pay extends Component<{}> {
         token : responseObj.token,
         amount : responseObj.amount,
       });
+
+      this._getPayURL(this.state.amount);
     }
   }
 
+  _getPayURL(amount){
+    let temp = GetPayURL(amount).then(responseObj => this._updatePayURL(responseObj)).catch();
+  }
+
+  _updatePayURL(responseObj){
+    this.setState({
+      payURL : responseObj.payment_request.longurl
+    });
+  }
 
   _onNavigationStateChange(webViewState){
     if(webViewState.url.substring(0,20)=='http://pravandan.in/'){
@@ -148,7 +161,7 @@ export class Pay extends Component<{}> {
 
             <Text style={{color:'#333',paddingTop:15,fontSize:18,fontWeight:'bold',color:'white'}}>{this.state.merchantName}</Text>
 
-            <Text style={{color:'#333',paddingTop:5,fontSize:14,color:'white'}}>10:05 AM , 10 AUGUST, 2017</Text>
+            
 
             <Text style={{color:'#333',paddingTop:15,fontSize:26,color:'white'}}>Rs {this.state.amount}</Text>
 
@@ -170,7 +183,7 @@ export class Pay extends Component<{}> {
               <WebView
               style={{borderRadius:4,height:window.height}}
               source={ {
-                uri: "https://test.instamojo.com/@pravandan_chand/8091c1f4c2254105ba99d8a49f59f0be"
+                uri: this.state.payURL
               } } 
               onNavigationStateChange={this._onNavigationStateChange.bind(this)}
               />
