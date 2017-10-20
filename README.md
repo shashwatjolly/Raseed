@@ -17,7 +17,6 @@ Usage
   - Request option is there to request payment from another user.
   - Pay option lets you pay to all requests according to your choice.
   - Passbook option shows all your transactions at one place.
-* Debit Credit Mobile
 * Profile section shows the details of current user.
 * Offers section will show the offers provided by various companies. At present, this section is hardcoded and will be updated in future.
 
