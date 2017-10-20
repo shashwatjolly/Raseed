@@ -23,18 +23,19 @@ Usage
 Testing
 ---------------------------------------------------------------------------------------------------
 the sample login credentials for testing are :
-* Mobile no.s:-
+* Mobile no.s :
 	1. 9876543210
 	2. 8765432109
 	3. 9999991144
 	4. 9211453009
 	5. 9350865446
-* Password for any of them:- 2017
+* Password for any of them : 2017
 * Mode of payment : Debit Card
-  Details of debit card    - 	no.			- 4242 4242 4242 4242
-				expiry  		- 05/22
-				cvv 			- 111
-				master card secure code - 1221
+  Details of debit card :
+	no.			-	4242 4242 4242 4242
+	expiry  		-	05/22
+	cvv 			-	111
+	master card secure code -	1221
 
 
 Avg CPU Usage
