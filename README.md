@@ -54,8 +54,9 @@ The sample login credentials for testing are :
   - Expiry  			-	05/22
   - CVV 			-	111
   -  Master Card secure code 	-	1221
-* The application's e-mail address : raseedinc@gmail.com
-password : 201720172017
+* The application's 	e-mail address : raseedinc@gmail.com
+
+			password : 201720172017
 
 Bugs
 ---------------------------------------------------------------------------------------------------
@@ -77,6 +78,8 @@ Contact Us
 ---------------------------------------------------------------------------------------------------
 Suggestions are welcome. Feel free to contact us at :
 
-+91- 8218535263
-8486803505
-9953618688
++91- 	8218535263
+
+	8486803505
+
+	9953618688
