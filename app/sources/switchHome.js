@@ -181,7 +181,7 @@ export class SwitchHome extends Component<{}> {
   	});
   	const scale = this.slideValue.interpolate({
   		inputRange: [0, 1],
-  		outputRange: [0.01, 5]
+  		outputRange: [0.01, 4]
   	})
   	const opacity2 = this.slideValue2.interpolate({
   		inputRange: [0, 1],
@@ -189,7 +189,7 @@ export class SwitchHome extends Component<{}> {
   	});
   	const scale2 = this.slideValue2.interpolate({
   		inputRange: [0, 1],
-  		outputRange: [0.01, 5]
+  		outputRange: [0.01, 4]
   	})
   	const opacity3 = this.slideValue3.interpolate({
   		inputRange: [0, 1],
@@ -197,7 +197,7 @@ export class SwitchHome extends Component<{}> {
   	});
   	const scale3 = this.slideValue3.interpolate({
   		inputRange: [0, 1],
-  		outputRange: [0.01, 5]
+  		outputRange: [0.01, 4]
   	})
     return (
       <View style={{backgroundColor:'#21232F',height:window.height,alignItems:'center'}}>
@@ -220,8 +220,8 @@ export class SwitchHome extends Component<{}> {
               <Text style={{color:'white',paddingLeft:0,fontFamily: 'Montserrat-Regular'}}>Passbook</Text>
             </TouchableOpacity>
         </View>
-        <View
-        	style= {{marginTop: 180, alignItems: 'center'}}>
+        <View 
+        	style= {{ position: 'absolute', marginTop:window.height/2-40, alignItems: 'center'}}>
         <Animated.View 
         	style={{position: 'absolute', width: 80, height: 80, backgroundColor: '#3366CC', borderRadius: 50, transform: [{scale: scale}], opacity}}/>
         <Animated.View 

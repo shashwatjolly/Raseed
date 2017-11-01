@@ -86,8 +86,8 @@ export class Profile extends Component<{}> {
           imageContainerStyle={{ width: "100%"}}
           imageSrc={require('../../assets/images/user.png')}
           featured
-          title='Shashwat Jolly'
-          caption='sjolly'
+          title='Raseed User'
+          caption='user'
           activeOpacity={1}
         />
         
@@ -97,7 +97,7 @@ export class Profile extends Component<{}> {
             title="Email"
             leftIcon={{name: "email"}}
             titleStyle={{color: '#21232F', fontWeight: 'bold'}}
-            rightTitle='shashwat.jolly@gmail.com'
+            rightTitle='raseeduser@raseed.com'
             rightTitleStyle={{marginLeft: -50, color: 'black'}}
             hideChevron
           />
@@ -118,7 +118,7 @@ export class Profile extends Component<{}> {
             title="Username"
             leftIcon={{name: "account-box"}}
             titleStyle={{color: '#21232F', fontWeight: 'bold'}}
-            rightTitle='sjolly'
+            rightTitle='user'
             rightTitleStyle={{color: 'black'}}
             hideChevron
           />
@@ -138,7 +138,7 @@ export class Profile extends Component<{}> {
             title="Birthday"
             leftIcon={{type: 'font-awesome', name: "birthday-cake"}}
             titleStyle={{color: '#21232F', fontWeight: 'bold'}}
-            rightTitle='13/10/1998'
+            rightTitle='20/10/2017'
             rightTitleStyle={{color: 'black'}}
             hideChevron
           />
@@ -147,7 +147,7 @@ export class Profile extends Component<{}> {
             title="City"
             leftIcon={{type: 'material-community', name: 'city'}}
             titleStyle={{color: '#21232F', fontWeight: 'bold'}}
-            rightTitle='Noida'
+            rightTitle='Guwahati'
             rightTitleStyle={{marginLeft: -50, color: 'black'}}
             hideChevron
           />
@@ -169,7 +169,7 @@ export class Profile extends Component<{}> {
             hideChevron
           />
           <ListItem
-            title="Wallet Balance"
+            title="Rewards"
             containerStyle={{borderBottomWidth: 0}}
             leftIcon={{type: 'entypo', name: "wallet"}}
             titleStyle={{color: '#21232F', fontWeight: 'bold'}}

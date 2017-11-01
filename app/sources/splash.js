@@ -44,6 +44,10 @@ export class Splash extends Component<{}> {
          <Text style={{color:'white',fontFamily: 'Montserrat-Regular',fontSize:12}}>Bringing Receipts to Cloud</Text>
         </View>
 
+        <View style={{alignItems: 'center', paddingTop:35, top:window.height-255}}>
+         <Text style={{color:'white',fontFamily: 'Montserrat-Regular',fontSize:12}}>Saving nature with every receipt</Text>
+        </View>
+
         <View style={{alignItems:'center',paddingTop:100}}>
 
             <TextInput
